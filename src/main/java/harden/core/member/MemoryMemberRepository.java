@@ -1,9 +1,12 @@
 package harden.core.member;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Component
 public class MemoryMemberRepository implements MemberRepository {
 
     // 동시성 이슈로 인한 ConcurrentHashMap 사용

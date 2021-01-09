@@ -6,12 +6,16 @@ import harden.core.discount.RateDiscountPolicy;
 import harden.core.member.Member;
 import harden.core.member.MemberRepository;
 import harden.core.member.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy; // 인터페이스에만 의존 하도록 설계 변경
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
