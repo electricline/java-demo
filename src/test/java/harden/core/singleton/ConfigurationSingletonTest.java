@@ -16,8 +16,15 @@ public class ConfigurationSingletonTest {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberServiceImpl memberService = ac.getBean("memberService", MemberServiceImpl.class);
         OrderServiceImpl orderService = ac.getBean("orderService", OrderServiceImpl.class);
-
         Assertions.assertThat(memberService.getMemberRepository()).isSameAs(orderService.getMemberRepository());
 
+    }
+
+    @Test
+    void configurationDepp(){
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig bean = ac.getBean(AppConfig.class);
+
+        System.out.println(bean.getClass());
     }
 }
