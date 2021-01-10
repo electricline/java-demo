@@ -1,10 +1,12 @@
 package harden.core.discount;
 
+import harden.core.annotation.MainDiscountPolicy;
 import harden.core.member.Grade;
 import harden.core.member.Member;
 import org.springframework.stereotype.Component;
 
 @Component
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private int discountPercent = 10;
